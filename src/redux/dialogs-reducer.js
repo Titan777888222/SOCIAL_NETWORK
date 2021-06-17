@@ -1,7 +1,64 @@
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND-MESSAGE';
 
-const dialogsReducer= (state, action ) => {
+let initialState = {
+  dialogs: [
+    {
+      id: 1,
+      name: "Dimych",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 2,
+      name: "Andrei",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 3,
+      name: "Sveta",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 4,
+      name: "Sasha",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 5,
+      name: "Viktor",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 6,
+      name: "Valera",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+    {
+      id: 7,
+      name: "Serg",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJYN5tb6v0YM5UUbESbtkCMuXjm269Q3Q3g&usqp=CAU",
+    },
+  ],
+  messages: [
+    { id: 1, message: "Hi  !!!" },
+    { id: 2, message: "Hello" },
+    { id: 3, message: "How are you?" },
+    { id: 4, message: "I am fine" },
+    { id: 5, message: "Thanks" },
+    { id: 6, message: "I am OK" },
+    { id: 7, message: "You look good" },
+  ],
+  newMessageBody: ""
+};
+
+const dialogsReducer = (state = initialState, action ) => {
 
     switch( action.type ) {
 

@@ -12,8 +12,5 @@ let reducers = combineReducers({
 
 let store = createStore( reducers );
 
-window.store = store;// написав это мы получаем, что теперь глобальный store получает что-то при нажатии на кнопку 
-                    //отправить сообщение в textarea, но при нажатии ничего не выведет, так как нужно придерживаться
-                    // концепции чистых функций
 
 export default store;

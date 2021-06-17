@@ -1,32 +1,54 @@
 import React from "react";
 import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogs-reducer";
-import Dialogs from "./Dialogs";
-import { connect } from "react-redux";
-// import StoreContext from "../../StoreContext";
+import StoreContext from "../../StoreContext";
 // import { dialogs, messages } from "../../index";
 // import Avatars from "./Avatars/Avatars";
 // import DialogItem from "./DialogItem/DialogItem";
 // import s from "./Dialogs.module.css";
 // import Message from "./Message/Message";
 // import MessageResponse from "./Message/MessageResponse";
+import Dialogs from "./Dialogs";
 
+const DialogsContainer = (/* props */) => {
 
-
- 
-let mapStateToProps = ( state ) => { // создает часть state в props
+  // let state = props.store.getState().dialogsPage;
   
-  return {
-    dialogsPage: state.dialogsPage // здесь будут сидеть данные из state
-  }
-}
-let mapDispatchToProps = ( dispatch ) => {
- 
-  return {
-    sendMessage: () => { dispatch( sendMessageCreator() )},
-    updateNewMessageBody: ( body ) => { dispatch( updateNewMessageBodyCreator( body ) )}
-  }
-}
-const DialogsContainer = connect( mapStateToProps, mapDispatchToProps )(Dialogs); // сейчас мы Dialogs как бы законнектили к store
-//Dialogs перерисуется, если объект dialogsPage будет иным, скопируется или изменится
+  // let onSendMessageClick = () => {
+  //   props.store.dispatch( sendMessageCreator() );
+  // };
+  // let onNewMessageChange = ( body ) => {
+  //     debugger;
+      
+  //     props.store.dispatch( updateNewMessageBodyCreator( body ) );
+  // };
+  
+  return (
+    <StoreContext.Consumer > 
+    {
+        ( store ) => {
+
+          let state = /* props. */store.getState().dialogsPage;
+    
+          let onSendMessageClick = () => {
+            /* props. */store.dispatch( sendMessageCreator() );
+          };
+          let onNewMessageChange = ( body ) => {
+              debugger;
+              
+              /* props. */store.dispatch( updateNewMessageBodyCreator( body ) );
+          };
+
+        return (
+        < Dialogs 
+                  updateNewMessageBody = { onNewMessageChange }
+                  sendMessage = { onSendMessageClick }
+                  dialogsPage = { state } />
+          )
+        }
+    }
+    </StoreContext.Consumer>
+  );
+};
+
 export default DialogsContainer;
 

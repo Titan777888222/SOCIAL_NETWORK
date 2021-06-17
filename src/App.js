@@ -3,20 +3,20 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { Route } from 'react-router-dom';
-import store from './redux/state';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+// import store from './redux/redux-store';
+// import Dialogs from './components/Dialogs/Dialogs';
 
 
 
 
-
-const  App = (props) => {
-
- let Some = () => < Dialogs store = { props.store } state = { props.state.dialogsPage } />
+const  App = (/* props */) => {
+debugger;
+ let Some = () => < DialogsContainer /* store = { props.store } state = { props.state.dialogsPage } */ />
  /* let Some = () => < Dialogs dialogs = { props.state.dialogsPage.dialogs } messages = { props.state.dialogsPage.messages}/> */
   
   return (
@@ -36,10 +36,11 @@ const  App = (props) => {
                 {/*3. */}
             <Route path = '/profile' 
                   render = { () => < Profile 
-                                        profilePage = { props.state.profilePage } 
-                                        dispatch = { props.dispatch } 
+                                        // store = { props.store }
+                                        // profilePage = { props.state.profilePage } 
+                                        // dispatch = { props.dispatch } 
                                         
-                                        Example = { props.Example } />}
+                                         />}
             />
             <Route path = '/news' render = { () => < News />}/>
             <Route path = '/music' render = { () => < Music />}/>

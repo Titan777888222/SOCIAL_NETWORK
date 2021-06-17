@@ -1,28 +1,32 @@
 import React from 'react';
-import MyPosts from './MyPosts/MyPosts';
-import s from "./Profile.module.css";
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 /* import Example from './MyPosts/Post/Like';
- */
-const Profile = (props) => {
+ */// import s from "./Profile.module.css";
+// import StoreContext from '../../StoreContext';
+// import MyPosts from './MyPosts/MyPosts';
 
-    
+const Profile = (/* props */) => {
+
+    debugger;
 
     return (
     <div>
+        
         <ProfileInfo /> 
         
-        {/* <Example /> */}       
-        <MyPosts
-             
-            posts = {props.profilePage.posts} 
-            newPostText = { props.profilePage.newPostText }
-            dispatch = {props.dispatch}  
+               
+        <MyPostsContainer
+            // store = { props.store }
+            // posts = {props.profilePage.posts} 
+            // newPostText = { props.profilePage.newPostText }
+            // dispatch = {props.dispatch}  
             
-            Example = { props.Example }
+            // Example = { props.Example }
             
         />
-        {/* <Example /> */}
+        
+       
     </div>
 
     )
