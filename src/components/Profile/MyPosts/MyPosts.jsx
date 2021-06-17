@@ -7,7 +7,6 @@ import Post from './Post/Post';
 /* import { posts } from "./../../../index" */
 
 
-
 const MyPosts = (props) => {
   
       

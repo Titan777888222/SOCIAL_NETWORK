@@ -15,7 +15,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 const  App = (/* props */) => {
-debugger;
+
  let Some = () => < DialogsContainer /* store = { props.store } state = { props.state.dialogsPage } */ />
  /* let Some = () => < Dialogs dialogs = { props.state.dialogsPage.dialogs } messages = { props.state.dialogsPage.messages}/> */
   

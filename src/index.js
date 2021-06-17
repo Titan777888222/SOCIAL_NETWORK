@@ -5,38 +5,35 @@ import './index.css';
 import App from './App';
 import store from './redux/redux-store'
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from  './StoreContext';
+import { Provider } from  'react-redux';
+//import { Provider } from  './StoreContext';
 
 
-let rerenderEntireTree = ( /* state */ ) => {
-    debugger;
+// let rerenderEntireTree = ( /* state */ ) => { //Мы убираем rerenderEntireTree и повторную ее отрисовку
+    
     ReactDOM.render(
         <BrowserRouter>
             
             <Provider store = { store }>
 
-                <App 
-                    // state = { store.getState() } //getState() здесь обязательно скобки так как мы хотим вызвать метод
-                    // dispatch = { store.dispatch.bind( store ) } 
-                    // store = { store }
-                    
-                    //Example = { store.Example.bind( store ) }
-                />
+                <App />
 
             </Provider>
         </BrowserRouter>,
       document.getElementById('root')
     );
-}
+// }
 
 
 
-rerenderEntireTree( store.getState() );
-store.subscribe( () => {
+// rerenderEntireTree( store.getState() );
 
-    let state = store.getState();
-    rerenderEntireTree(state); 
-});
+// store.subscribe( () => {
+
+//     let state = store.getState();
+//     rerenderEntireTree(state); 
+// });
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

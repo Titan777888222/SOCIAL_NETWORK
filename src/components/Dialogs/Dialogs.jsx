@@ -16,13 +16,14 @@ const Dialogs = (props) => {
   //   return <Avatars avatar={a.avatar} />;
   // });
   
-  debugger;
+ 
   let dialogsElements = state.dialogs.map((d) => {
-    return <DialogItem name={d.name} id={d.id} />;
+
+        return <DialogItem  name={d.name} key = {d.id} id={d.id} />;
   });
 
   let messagesElements = state.messages.map((m) => {
-    return <Message message={m.message} id={m.id} />;
+    return <Message message={m.message} key = {m.id} id={m.id}  />;
   });
 
   let newMessageBody = state.newMessageBody;
@@ -36,7 +37,7 @@ const Dialogs = (props) => {
     props.sendMessage();
   };
   let onNewMessageChange = (e) => {
-      debugger;
+      
       let body = e.target.value; // Атрибут тэга textarea - target указывает, что он будет передавать событие, 
                                 // которое придет через е со значением value из textarea
       props.updateNewMessageBody( body );
