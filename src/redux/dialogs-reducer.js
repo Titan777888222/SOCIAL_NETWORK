@@ -60,26 +60,37 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action ) => {
 
-    let stateCopy = {
-      ...state//, 
-      //messages: [...state.messages]
-    };
-    debugger;
+    // let stateCopy = {
+    //   ...state, 
+    //   messages: [...state.messages]
+    // };
+    
     switch( action.type ) {
 
           case UPDATE_NEW_MESSAGE_BODY: {              
-              
-              stateCopy.newMessageBody = action.body;
+            let stateCopy = {
+              ...state,
+              newMessageBody: action.body
+            };
+              // stateCopy.newMessageBody = action.body;
             
               return stateCopy;
           }
           case SEND_MESSAGE: {
+            let body = state.newMessageBody;
+            let stateCopy = {
+              ...state, 
+              newMessageBody: ' ',
+              messages: [...state.messages, { id: 8, message: body }] //это вместо push - { id: 8, message: body } добавляется в конец массива
+                                                                      //а если нужно добавить в начало массива,то вот так[{ id: 8, message: body }, ...state.messages]
+            };
               
-              let body = state.newMessageBody;//stateCopy.newMessageBody;
-              stateCopy.newMessageBody = ' ';
+            // let body = state.newMessageBody;
+            //stateCopy.newMessageBody;
+              // stateCopy.newMessageBody = ' ';
               
              // stateCopy.messages = [...state.messages];
-              stateCopy.messages.push({ id: 8, message: body });
+              // stateCopy.messages.push({ id: 8, message: body });
 
               return stateCopy;
           }
