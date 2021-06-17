@@ -1,0 +1,95 @@
+.dialogs {
+  display: grid;
+  width: 1200px;
+  margin: 0 auto;
+  
+  grid-template-areas:
+    "h h"
+    "d m";
+  grid-template-columns: 2fr 10fr; 
+ 
+  
+}
+
+
+  
+
+.dialogs_items {
+  grid-area: d; 
+  background-color: rgb(223, 75, 30);
+  padding: 5px;  
+  color: rgb(45, 29, 117);
+ 
+
+  display: grid;
+  width: 300px;
+  margin: 0 auto;
+  grid-template-areas:
+    "h h"
+    "a n";
+  grid-template-columns: 4fr 4fr; 
+}
+.avatar {
+  grid-area: a;
+  background-color: rgb(189, 209, 75);
+  height: 156px;
+  padding-left: 20px;
+}
+.name {
+  grid-area: n;
+}
+
+
+.messages {
+  grid-area: m; 
+  background-color: rgb(223, 75, 30);
+  padding: 5px;
+  
+
+  color: rgb(45, 29, 117);
+
+  display: grid;
+  width: 880px;
+  margin: 0 auto;
+  grid-template-areas:
+  "h h"
+  "f s";
+  grid-template-columns: 4fr 4fr; 
+
+}
+.responseFirstMessages {
+  grid-area: f;
+  
+}
+.responseSecondMessages {
+    grid-area: s; 
+    background-color: rgb(189, 209, 75);
+    color: rgb(45, 29, 117);
+    text-align: right;
+    padding-right: 20px;
+  }
+
+.dialog {
+  background-color: rgb(189, 209, 75);
+  color: #000;
+}
+.dialog.active {
+  color: gold;
+}
+.message {
+  
+  background-color: rgb(189, 209, 75);
+  color: #000;
+  text-align: left;
+  padding-left: 20px;
+}
+img {
+  height: 10px;
+  width: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 7px 5px 0 0;
+}
